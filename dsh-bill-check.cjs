@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 /**
- * dsh-bill-check — DeepSeek Harness 本地账单核查工具（7 天验证实验用）
+ * dsh-bill-check — DeepSeek Harness 本地账单核查工具
  *
- * 原则（对齐 07-winner-prd.md）：
+ * 原则：
  *  - 零依赖、零网络、零凭证：只读 ~/.dsh/sessions 的 token 计量字段，从不读取/输出对话内容。
  *  - 未知费率一律显示"未计价"，绝不猜价。
  *
  * 用法：
- *   node dsh-bill-check.js                 # 汇总 + 模型分布 + 时段分布 + 异常检测
- *   node dsh-bill-check.js --csv out.csv   # 按日/模型导出对账明细
- *   node dsh-bill-check.js --currency cny  # 用人民币价目表（v4-pro 有官方人民币价；flash 需自补）
- *   node dsh-bill-check.js --days 7        # 只看最近 N 天
+ *   node dsh-bill-check.cjs                 # 汇总 + 模型分布 + 时段分布 + 异常检测
+ *   node dsh-bill-check.cjs --csv out.csv   # 按日/模型导出对账明细
+ *   node dsh-bill-check.cjs --currency cny  # 用人民币价目表（v4-pro 有官方人民币价；flash 需自补）
+ *   node dsh-bill-check.cjs --days 7        # 只看最近 N 天
  *
  * 费率来源：
  *  - USD 现行价：api-docs.deepseek.com/quick_start/pricing（2026-08-17 抓取；高峰 UTC 01-04 / 06-10）
